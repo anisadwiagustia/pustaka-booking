@@ -11,21 +11,19 @@ class Latihan1 extends CI_Controller
         echo "hasil cetak";
     }
 
-    public function pnjmlahan($n1, $n2)
+    public function penjumlahan($n1, $n2)
     {
         $this->load->model('Model_latihan1');
         $hsl = $this->Model_latihan1->jumlah($n1, $n2);
-        echo "Hasil Penjumlahan dari ". $n1 ." + ". $n2 ." = ".$hsl;
+        echo "Hasil Penjumlahan dari " . $n1 . " + " . $n2 . " = " . $hsl;
     }
 
     public function penjumlahan($n1, $n2)
     {
-    $this->load->model('Model_latihan1');
-    $data['nilai1'] = $n1;
-    $data['nilai2'] = $n2;
-    $data['hasil'] = $this->Model_latihan1->jumlah($n1, $n2);
-    $this->load->view('view-latihan1', $data);
+        $this->load->model('Model_latihan1');
+        $data['nilai1'] = $n1;
+        $data['nilai2'] = $n2;
+        $data['hasil'] = $this->Model_latihan1->jumlah($n1, $n2);
+        $this->load->view('view-latihan1', $data);
     }
-
 }
-?>

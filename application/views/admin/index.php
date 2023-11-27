@@ -110,64 +110,31 @@
                             <th>Judul Buku</th>
                             <th>Pengarang</th>
                             <th>Penerbit</th>
-                            <th>#</th>
-                            <th>Nama Anggota</th>
-                            <th>Email</th>
-                            <th>Role ID</th>
-                            <th>Aktif</th>
-                            <th>Member Sejak</th>
+                            <th>Tahun Terbit</th>
+                            <th>ISBN</th>
+                            <th>Stok</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $i = 1;
-                        foreach ($anggota as $a) { ?> <tr>
+                        foreach ($buku as $b) { ?> <tr>
                                 <td><?= $i++; ?></td>
-                                <td><?= $a['nama']; ?></td>
-                                <td><?= $a['email']; ?></td>
-                                <td><?= $a['role_id']; ?></td>
-                                <td><?= $a['is_active']; ?></td>
-                                <td><?= date('Y', $a['tanggal_input']); ?></td>
+                                <td><?= $b['judul_buku']; ?></td>
+                                <td><?= $b['pengarang']; ?></td>
+                                <td><?= $b['penerbit']; ?></td>
+                                <td><?= $b['tahun_terbit']; ?></td>
+                                <td><?= $b['isbn']; ?></td>
+                                <td><?= $b['stok']; ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
-            <div class="table-responsive table-bordered col-sm-5 ml-auto mr-auto mt-2">
-                <div class="page-header"> <span class="fas fa-book text-warning mt-2"> Data Buku</span> <a href="<?= base_url('buku'); ?>"><i class="fas fa-search text-primary mt-2 float-right"> Tampilkan</i></a> </div>
-                <div class="table-responsive">
-                    <table class="table mt-3" id="table-datatable">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Judul Buku</th>
-                                <th>Pengarang</th>
-                                <th>Penerbit</th>
-                                <th>Tahun Terbit</th>
-                                <th>ISBN</th>
-                                <th>Stok</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $i = 1;
-                            foreach ($buku as $b) { ?> <tr>
-                                    <td><?= $i++; ?></td>
-                                    <td><?= $b['judul_buku']; ?></td>
-                                    <td><?= $b['pengarang']; ?></td>
-                                    <td><?= $b['penerbit']; ?></td>
-                                    <td><?= $b['tahun_terbit']; ?></td>
-                                    <td><?= $b['isbn']; ?></td>
-                                    <td><?= $b['stok']; ?></td>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
-        <!-- end of row table-->
     </div>
-    <!-- /.container-fluid -->
+    <!-- end of row table-->
+</div>
+<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
