@@ -5,7 +5,7 @@ class Autentifikasi extends CI_Controller
     {
         //jika statusnya sudah login, maka tidak bisa mengakses halaman login alias dikembalikan ke tampilan user
         if ($this->session->userdata('email')) {
-            //redirect('user');
+            redirect('user');
         }
         $this->form_validation->set_rules(
             'email',
@@ -150,5 +150,12 @@ class Autentifikasi extends CI_Controller
             $this->session->set_flashdata('pesan', '<div  class="alert alert-success alert-message" role="alert">Selamat!! akun member anda sudah dibuat. Silahkan Aktivasi Akun anda</div>');
             redirect('autentifikasi');
         }
+    }
+    public function logout()
+    {
+        $this->session->sess_destroy();
+
+        redirect(base_url());
+    }
     }
 }
